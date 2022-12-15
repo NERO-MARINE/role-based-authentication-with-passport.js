@@ -1,0 +1,35 @@
+<html lang="en">
+<%- include('partials/header')%>
+<body>
+  <%- include('partials/nav')%>
+  <ul>
+    <div class="center">
+      <li>id: <%= person.id %> </li>
+    </div>
+    <div class="center">
+      <li>email: <%= person.email%> </li>
+    </div>
+    <div class="center">
+      <li>username: <%= person.username %> </li>
+    </div>
+    <div class="center">
+      <li>Img: <%= person.image %> </li>
+    </div>
+    <div class="center">
+      <li>demomination: <%= person.denomination %> </li>
+    </div>
+    <div class="center">
+      <li>amount: <%= person.amount %> </li>
+    </div>
+    <div class="center">
+      <li>role: <%= person.role %>  </li>
+    </div>
+    <div class="center">
+      <li>password: <%= person.password%> </li>
+    </div>
+ 
+  </ul>
+
+<%- include('partials/footer')%>
+</body>
+</html>

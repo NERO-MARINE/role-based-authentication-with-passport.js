@@ -1,0 +1,29 @@
+<html lang="en">
+<%- include('partials/header')%>
+<body>
+  <%- include('partials/nav')%>
+  <div class="flash_msgs">
+    <%- include('partials/flash_messages')%>
+  </div>
+  <form action="/auth/login" method="POST">    
+    <h2>Login</h2>
+    <label for="email">Email</label>
+    <input type="text" name="email" required>
+    <!-- <div class="email error"></div> -->
+
+    <label for="email">Password</label>
+    <input type="password" name="password" required>
+    <!-- <div class="password error"></div> -->
+    <button>Login</button>
+
+    <p>
+        Dont have an account? <a href="/auth/register">register here</a>
+    </p>
+</form>
+
+
+<%- include('partials/footer')%>
+</body>
+</html>
+
+

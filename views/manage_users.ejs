@@ -1,0 +1,43 @@
+<html lang="en">
+<%- include('partials/header')%>
+<body>
+  <%- include('partials/nav')%>
+  <div class="flash_msgs">
+    <%- include('partials/flash_messages')%>
+  </div>
+  <h1 class="table">Manage users</h1> 
+
+  <table id="customers">
+      <thead>
+          <th>id</th>
+          <th>email</th>
+          <th>role</th>
+      </thead>
+
+      <tbody>
+          <!-- <pre><%= JSON.stringify(allusers, null, 2) %> </pre> -->
+          <% allusers.forEach(user => { %>
+            <tr>
+                <td><%= user.id %> </td>
+                <td><a href="/admin/user/<%= user.id %>"><%= user.email %></a></td>
+                <!-- <td><%= user.role %> </td> -->
+                <td>
+                  <form action="/admin/update-role/<%= user.id %>?_method=PUT" method="POST">
+                       <select name="role" id="">
+                            <option value="ADMIN" <%= user.role === 'ADMIN' ? 'selected' : '' %>>Admin</option>
+                            <option value="MODERATOR" <%= user.role === 'MODERATOR' ? 'selected' : '' %>>Moderator</option>
+                            <option value="CLIENT" <%= user.role === 'CLIENT' ? 'selected' : '' %>>Client</option>
+                       </select>
+                       <button style="display: inline;">Update</button>
+                     
+                  </form>
+                </td>
+            </tr>
+          <% }) %>
+      </tbody>
+  </table>
+
+
+<%- include('partials/footer')%>
+</body>
+</html>

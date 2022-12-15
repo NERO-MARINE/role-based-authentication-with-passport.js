@@ -1,0 +1,38 @@
+
+
+<html lang="en">
+<%- include('partials/header')%>
+<body>
+  <%- include('partials/nav')%>
+  <div class="flash_msgs">
+    <%- include('partials/flash_messages')%>
+  </div>
+  
+  <form action="/auth/register" method="POST">
+      <h2>Sign up</h2>
+      <label for="email">Email</label>
+      <input type="text" name="email" value="<%= locals.email ? email : ''  %>" required >
+  
+      <label for="email">Username</label>
+      <input type="text" name="username" required>
+      
+  
+      <label for="email">Password</label>
+      <input type="password" name="password" required>
+      
+  
+      <label for="email">Confirm Password</label>
+      <input type="password" name="confirm_password" required>
+      
+  
+      <button>Sign up</button>
+      <p>
+          Already registered? <a href="/auth/login">Login here</a>
+      </p>
+  </form>
+
+
+<%- include('partials/footer')%>
+</body>
+</html>
+
