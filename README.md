@@ -1,0 +1,1 @@
+# Role based authentication and authorization, passportjs local strategy, CRUD, image upload, and email sending

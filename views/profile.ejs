@@ -2,33 +2,31 @@
 <%- include('partials/header')%>
 <body>
   <%- include('partials/nav')%>
-  <ul>
-    <div class="center">
-      <li>id: <%= person.id %> </li>
-    </div>
-    <div class="center">
-      <li>email: <%= person.email%> </li>
-    </div>
-    <div class="center">
-      <li>username: <%= person.username %> </li>
-    </div>
-    <div class="center">
-      <li>Img: <%= person.image %> </li>
-    </div>
-    <div class="center">
-      <li>demomination: <%= person.denomination %> </li>
-    </div>
-    <div class="center">
-      <li>amount: <%= person.amount %> </li>
-    </div>
-    <div class="center">
-      <li>role: <%= person.role %>  </li>
-    </div>
-    <div class="center">
-      <li>password: <%= person.password%> </li>
-    </div>
- 
-  </ul>
+  <div class="flash_msgs">
+    <%- include('partials/flash_messages')%>
+  </div>
+  <table id="user_profile">
+    <tr>
+      <th>User Id</th>
+      <th>Image</th>
+      <th>Email</th>
+      <th>Username</th>
+      <th>denomination</th>
+      <th>amount</th>
+      <th>role</th>
+    </tr>
+    <tr>
+      <td><%= person.id %> </td>
+      <td><img src="/<%= person.image %>" alt="<%= person.username %>" width="100"></td>
+      <td><%= person.email %> </td>
+      <td><%= person.username %> </td>
+      <td><%= person.denomination %> </td>
+      <td><%= person.amount %> </td>
+      <td><%= person.role %> </td>
+    </tr>
+  </table>
+
+  <button id="auth_btn"><a href="/user/update_profile/<%= person._id %> ">Edit profile</a></button>
 
 <%- include('partials/footer')%>
 </body>

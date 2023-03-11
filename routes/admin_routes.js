@@ -1,7 +1,16 @@
 const router = require('express').Router();
 const User = require('../model/user');
 const mongoose = require('mongoose');
-const {roles} = require('../controllers/authorization')
+const {roles} = require('../controllers/authorization');
+
+
+
+
+router.get('/dashboard', (req,res)=>{
+    res.render('admin_dashboard');
+})
+
+
 router.get('/users', async(req, res)=>{
     try{
        const allusers = await User.find();

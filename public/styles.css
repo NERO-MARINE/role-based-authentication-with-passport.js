@@ -69,7 +69,7 @@ label{
   display: block;
   margin: 20px 0 10px;
 }
-button{
+#auth_btn{
   margin-top: 30px;
   border-radius: 36px;
   background: #FEE996;
@@ -145,13 +145,32 @@ footer{
   margin: 10px auto;
 }
 
-.center{
-  background-color: white;
-  font-weight: bold;
-  text-align: center;
-  width: 70%;
-  margin: 10px auto;
+/* user profile table */
+
+#user_profile {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
+
+#user_profile td, #user_profile th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#user_profile tr:nth-child(even){background-color: #f2f2f2;}
+
+#user_profile tr:hover {background-color: #ddd;}
+
+#user_profile th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* user profile table ends */
 
 /* manage users table */
 #customers {
@@ -177,3 +196,58 @@ footer{
   background-color: #4CAF50;
   color: white;
 }
+
+/*  manage users table ends*/
+
+/* admin nav */
+#admin_body{
+  margin: 0;
+}
+  
+#admin{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+#admin li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* #admin ul li a.active {
+  background-color: #4CAF50;
+  color: white;
+} */
+
+#admin li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* admin nav ends*/
+
+
+/* For contact form starts*/
+.contacFormPage{
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contacForm input, textarea{
+  margin-top: 20px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+
+/* For contact form ends*/

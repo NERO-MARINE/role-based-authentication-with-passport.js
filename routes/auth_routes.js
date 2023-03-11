@@ -1,6 +1,7 @@
 const express = require('express');
 const {body, validationResult} = require('express-validator');
 const passport = require('passport');
+const nodemailer = require('nodemailer');
 
 const router = express.Router();
 
@@ -53,6 +54,7 @@ async(req, res) => {
      const {email} = req.body;
      const isExisting = await User.findOne({email});
      if(isExisting){
+         req.flash('info', 'Email already exists');
          res.redirect('/auth/register');
          return; // This will prevent the next code from running; which is o create a new user
      }
@@ -67,6 +69,41 @@ async(req, res) => {
     //     'image': 'upload image'
     // })
     await user.save();
+
+    // console.log(req.body);
+
+    //  sending email after sign up
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+         user: 'youremail@gmail.com',
+         pass: 'email password',
+      }
+  })
+
+  const mailOptions = {
+      from: 'your@gmail.com',
+      to: req.body.email,
+      subject: `Message from codeNero website`,
+      text: `Hello`,
+      html: `<h1> welcome to this website. Your signup is sucessful</h1>`
+  }
+
+   transporter.sendMail(mailOptions, (err,info)=>{
+       if(err){
+           console.log(err);
+           res.send('error');
+       }else{
+           console.log(info.response);
+           // res.send('success');
+           req.flash('success', 'Message sent successfully');
+           res.redirect('/contact')
+       }
+   });
+
+  //  sending email after sign up
+
+
     // res.send(user);
     req.flash('success', `${user.email} registered sucessfully. You can now login`);
     res.redirect('/auth/login');

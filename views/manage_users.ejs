@@ -1,13 +1,17 @@
 <html lang="en">
-<%- include('partials/header')%>
-<body>
-  <%- include('partials/nav')%>
-  <div class="flash_msgs">
-    <%- include('partials/flash_messages')%>
-  </div>
-  <h1 class="table">Manage users</h1> 
+<%- include('partials/admin_head')%>
 
-  <table id="customers">
+<body id="admin_body">
+
+  <%- include('partials/admin_nav')%>
+
+   <div style="margin-left:25%;padding:1px 16px;height:1000px;">
+    <div class="flash_msgs">
+      <%- include('partials/flash_messages')%>
+    </div>
+    
+    <h1 class="table">Manage users</h1> 
+    <table id="customers">
       <thead>
           <th>id</th>
           <th>email</th>
@@ -38,6 +42,7 @@
   </table>
 
 
+   </div>
 <%- include('partials/footer')%>
 </body>
 </html>

@@ -19,6 +19,8 @@ const app = express();
 // middleware
 app.use(express.static('public'));
 
+app.use(express.static('uploads'));
+
 // view engine
 app.set('view engine', 'ejs');
 
@@ -26,7 +28,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended:true}));
 
 // database connection
-const dbconn = 'Put your connectionString'
+const dbconn = 'your mongodb connection string'
 
 mongoose.set('useFindAndModify', false);
 

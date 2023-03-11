@@ -1,0 +1,43 @@
+<html lang="en">
+<%- include('partials/header')%>
+<body>
+  <%- include('partials/nav')%>
+  <div class="flash_msgs">
+    <%- include('partials/flash_messages')%>
+  </div>
+  
+  <form action="/user/update_profile/<%=user_profile._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+      <h2>Update profile</h2>
+      <label for="email">Email</label>
+      <input type="text" name="email" value="<%= user_profile.email %>" readonly>
+  
+      <label for="username">Username</label>
+      <input type="text" name="username" value="<%= user_profile.username %> ">
+      
+  
+      <label for="email">Denomination</label>
+      <select id="denomination" name="denomination" required>
+        <option value="&yen;" <%= user_profile.denomination === '¥' ? 'selected' : ''%>>yen</option>
+        <option value="&dollar;" <%= user_profile.denomination === '$' ? 'selected' : ''%>>dollar</option>
+        <option value="&#x20AC;" <%= user_profile.denomination === '€' ? 'selected' : ''%>>euro</option>
+      </select>
+      
+  
+      <label for="image">Image</label>
+        <input type="file" id="image" name="image" placeholder="upload image..">
+      <img src="/<%= user_profile.image%>"width="100" alt="upload your picture">
+
+      <hr>
+
+      <input type="" name="old_image" alt="upload_image" value="<%= user_profile.image%>" readonly>
+      
+  
+      <button id="auth_btn">Update Profile</button>
+     
+  </form>
+
+
+<%- include('partials/footer')%>
+</body>
+</html>
+
