@@ -1,0 +1,25 @@
+<html lang="en">
+<%- include('partials/header')%>
+<body>
+  <%- include('partials/nav')%>
+  <div class="flash_msgs">
+    <%- include('partials/flash_messages')%>
+  </div>
+  <form action="/user/deposit/<%=person._id %>" method="POST">    
+    <h2>Deposit</h2>
+    <label for="email">Amount</label>
+    <input type="text" name="amt" required>
+
+    <label for="email">Currency</label>
+    <input type="text" name="currencyType" required>
+
+    <button id="auth_btn">Deposit</button>
+
+</form>
+
+
+<%- include('partials/footer')%>
+</body>
+</html>
+
+

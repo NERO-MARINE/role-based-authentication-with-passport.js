@@ -251,3 +251,21 @@ footer{
 
 
 /* For contact form ends*/
+
+/* deposits starts */
+.deposit{
+  padding: 20px;
+  margin: 10px 0;
+  display: flex;
+  gap: 5px;
+  font-weight: bold;
+}
+
+.alldeposits{
+  box-shadow: 2px 5px 6px 4px lightgrey;
+  display: flex;
+  gap: 15px;
+}
+
+
+/* deposit ends */

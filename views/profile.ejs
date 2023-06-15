@@ -26,7 +26,11 @@
     </tr>
   </table>
 
-  <button id="auth_btn"><a href="/user/update_profile/<%= person._id %> ">Edit profile</a></button>
+  <button id="auth_btn"><a href="/user/update_profile/<%= person._id %> ">Edit profile</a></button> <br>
+
+  <button id="auth_btn"><a href="/user/deposit">Make a deposit</a></button> <br>
+
+  <button id="auth_btn"><a href="/user/alldeposits/<%= person._id %> ">Get all deposits</a></button>
 
 <%- include('partials/footer')%>
 </body>

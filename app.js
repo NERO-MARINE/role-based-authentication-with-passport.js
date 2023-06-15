@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const connectFlash = require('connect-flash');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const index_routes = require('./routes/index_routes');
 const user_routes = require('./routes/user_routes');
 const auth_routes = require('./routes/auth_routes');
@@ -28,7 +28,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended:true}));
 
 // database connection
-const dbconn = 'your mongodb connection string'
+const dbconn = 'add your atlas connection string here';
 
 mongoose.set('useFindAndModify', false);
 

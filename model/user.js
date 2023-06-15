@@ -38,7 +38,13 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: [roles.admin, roles.moderator, roles.client],
         default: roles.client
-    }
+    },
+    deposits:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'deposit' // collection name
+        }
+    ],
 }, {timestamps:true})
 
 

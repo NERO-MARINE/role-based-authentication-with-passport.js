@@ -76,13 +76,13 @@ async(req, res) => {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-         user: 'youremail@gmail.com',
-         pass: 'email password',
+         user: 'oghenerookerri@gmail.com',
+         pass: 'qmtedgblfmsjmysr',
       }
   })
 
   const mailOptions = {
-      from: 'your@gmail.com',
+      from: 'oghenerookerri@gmail.com',
       to: req.body.email,
       subject: `Message from codeNero website`,
       text: `Hello`,
